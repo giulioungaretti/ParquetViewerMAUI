@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:MauiApp3.ViewModels"
+             x:DataType="viewModels:ViewModel"
+             x:Class="MauiApp3.MainPage"
+             Title="{Binding Title}">
+
+    <ScrollView>
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+                <ActivityIndicator 
+                   Color="Orange" />
+
+            <VerticalStackLayout 
+                Spacing="25" 
+                Padding="30,0" 
+                IsVisible="{Binding IsBusy}"
+                HorizontalOptions="Center"
+                VerticalOptions="Center" >
+                <ActivityIndicator 
+                   IsRunning="True"
+                   Color="Orange" />
+                <Label Text="Loading"/>
+            </VerticalStackLayout>
+
+            <HorizontalStackLayout
+                IsVisible="{Binding IsNotBusy }"
+                HorizontalOptions="Center">
+                <Button Text="Get Things" Command="{Binding GetTableCommand}"/>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

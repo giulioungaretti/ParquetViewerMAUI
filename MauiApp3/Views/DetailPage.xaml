@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasBackButton="false"
+             x:Class="MauiApp3.Views.DetailPage">
+
+    <StackLayout>
+        <Label Text="Welcome to .NET MAUI!"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+    </StackLayout>
+    <ContentPage.MenuBarItems>
+        <MenuBarItem Text="File">
+            <MenuFlyoutItem Text="Open"
+                            Command="{Binding ExitCommand}" />
+            <MenuFlyoutItem Text="Close"
+                            Command="{Binding ExitCommand}" />
+        </MenuBarItem>
+    </ContentPage.MenuBarItems>
+</ContentPage>
